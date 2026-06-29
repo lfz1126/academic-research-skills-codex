@@ -4,6 +4,23 @@ All notable changes to the Codex package are documented here.
 
 ## Unreleased
 
+## [0.1.15] - 2026-06-29
+
+### What's Changed
+- Updated the vendored ARS runtime from
+  `c22c17eed8a5753aa60681be9734919f2e2f5b42` (`v3.13.0-2-gc22c17e`,
+  ARS main after GitHub Copilot documentation updates) to
+  `17c518b286e48bbcd19fa7d05ec4f7d2aeb01641` (`v3.13.0-5-g17c518b`,
+  current ARS main).
+- Added the native-reviewed upstream Korean README and its spec-consistency
+  lint coverage while preserving Codex-specific nested-distribution patches.
+- Added the upstream platform-port reminder workflow and pull request template
+  reminder text in the vendored traceability copy.
+
+### Notes
+- This sync pins ARS `main`, not an exact upstream tag. The nearest upstream tag
+  remains `v3.13.0`.
+
 ## [0.1.14] - 2026-06-21
 
 ### Fixed
