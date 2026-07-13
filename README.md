@@ -1,6 +1,6 @@
 # Academic Research Skills for Codex
 
-[![Version](https://img.shields.io/badge/version-v0.1.17-blue)](VERSION)
+[![Version](https://img.shields.io/badge/version-v0.1.18-blue)](VERSION)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Sponsor](https://img.shields.io/badge/sponsor-Buy%20Me%20a%20Coffee-orange?logo=buy-me-a-coffee)](https://buymeacoffee.com/crucify020v)
 
@@ -49,7 +49,7 @@ Use this repo when you want the Codex-native single-suite skill.
 
 ## Versioning
 
-This Codex package is version `0.1.17`. The repo-root `VERSION` file,
+This Codex package is version `0.1.18`. The repo-root `VERSION` file,
 `skills/academic-research-suite/SKILL.md` metadata version, and
 `skills/academic-research-suite/manifest.json` `adapter_version` track the
 Codex package version independently of the vendored ARS suite. Vendored upstream
@@ -58,11 +58,12 @@ versions are recorded by commit in `manifest.source_repositories[]`.
 Package-level changes are summarized in [`CHANGELOG.md`](CHANGELOG.md).
 
 The vendored ARS source currently tracks
-`Imbad0202/academic-research-skills@f86d68a80a6fd05bf51688ff39297ea603eda912`
-(`v3.15.0`). Vendored runtime content includes the ARS v3.15 release-gate
-hardening, command-invariants and changelog coverage checks, prompt-debt
-retirement round 2, defrift locks, SETUP cross-model parity checks, and the
-release-discipline toolkit snapshot.
+`Imbad0202/academic-research-skills@73c898c842afae3f163ac571dfa098c72d7c82af`
+(`v3.16.0`). Vendored runtime content includes ARS v3.16 model tiering,
+risk-stratified cross-model verification and blind disagreement checkpoints,
+GPT-5.6 Sol provisional verifier support, API retrieval hardening, Korean
+routing triggers, CARS introduction/title guidance, and the WP advisory
+held-out evaluation updates.
 Nested upstream `.github/` workflows and root `agents/` mirrors are preserved
 for traceability and self-tests, but are not repo-level CI or Codex entrypoints;
 Claude/plugin loader files under `.claude/` and `.claude-plugin/` remain
@@ -310,15 +311,19 @@ ARS was originally written for Claude Code. In this Codex package:
   class first, and obtain explicit user consent before any external upload.
   External reviewers are called through configured provider APIs, not simulated
   through the active Codex model.
+- `ARS_MODEL_TIERING` is unset by default. The Codex adapter preserves the
+  upstream judgment/execution classification but applies `economy` or
+  `quality-boost` only when the runtime supports an explicit per-dispatch model
+  override; otherwise it reports a no-op and keeps the active model.
 - Upstream references to a "fresh Claude Code session" mean a new Codex
   conversation in this package; Material Passport reset semantics still apply.
 - If a citation, source, statistic, or journal policy cannot be verified, Codex
   should mark it as unverified rather than invent support.
 
-### ARS v3.15 Release Parity
+### ARS v3.16 Release Parity
 
 This package aims for the same user-facing workflow content as upstream ARS
-`v3.15.0` where Codex has an equivalent concept.
+`v3.16.0` where Codex has an equivalent concept.
 
 | Upstream ARS feature | Codex package behavior |
 |---|---|
@@ -328,6 +333,7 @@ This package aims for the same user-facing workflow content as upstream ARS
 | Plugin-shipped agents | Agent files are role/phase prompts; Codex runs them inline unless the user explicitly asks for delegated subagents |
 | Optional Codex full-runtime profile | Planner, agent-team templates, and hook pack live under `skills/academic-research-suite/codex/`; disabled by default |
 | `model: opus` / `model: sonnet` command routing | Treated as Claude metadata; Codex uses the active model |
+| `ARS_MODEL_TIERING=economy\|quality-boost` | Classification is preserved; routing remains advisory unless Codex exposes per-dispatch model selection |
 | SessionStart and SubagentStop hooks | Vendored for traceability only; Codex does not install or execute Claude hooks |
 | Plugin marketplace update / auto-update | Not available here; update by reinstalling or pulling this Codex repo |
 | Claude Code Agent Team | Not automatic; Codex subagents require an explicit user request for delegation or parallel agents |

@@ -4,6 +4,26 @@ All notable changes to the Codex package are documented here.
 
 ## Unreleased
 
+## [0.1.18] - 2026-07-13
+
+### What's Changed
+- Updated the vendored ARS runtime from
+  `f86d68a80a6fd05bf51688ff39297ea603eda912` (`v3.15.0`) to
+  `73c898c842afae3f163ac571dfa098c72d7c82af` (`v3.16.0`).
+- Added upstream model tiering, risk-stratified cross-model verification and
+  blind disagreement checkpoints, GPT-5.6 Sol provisional verifier support,
+  API retrieval hardening, CARS introduction/title guidance, WP advisory
+  evaluation updates, Korean routing triggers, and `THIRD_PARTY.md`.
+- Propagated Korean intent boundaries into the Codex router and planner, kept
+  model tiering advisory unless per-dispatch Codex model selection exists, and
+  retained explicit consent for all external cross-model uploads.
+- Preserved the single-root-skill layout, `WORKFLOW.md` entrypoint renaming,
+  nested-distribution validator patches, macOS compatibility patches, and the
+  materialized Codex Desktop plugin bundle.
+
+### Notes
+- This sync pins the exact ARS release tag `v3.16.0`.
+
 ## [0.1.17] - 2026-07-04
 
 ### What's Changed
