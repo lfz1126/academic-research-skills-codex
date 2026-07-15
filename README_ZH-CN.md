@@ -30,6 +30,17 @@ skills/academic-research-suite/
 
 原始的 Claude Code ARS checkout 不会被修改。上游内容从最新的 GitHub clone 中复制，并通过 `skills/academic-research-suite/SKILL.md` 中的 Codex router 进行适配。
 
+
+## 🚀 快速试用
+
+想在本地安装前先体验一下 Academic Research Suite？可以在 Telegram 或 WhatsApp 中
+免费试用：
+
+[在 ClawMama 上试用 Academic Research Suite](https://app.clawmama.run/skills/ymlo6f/hermes?utm_source=github&utm_medium=issue&utm_campaign=skill_outreach_academic_research_skills_codex)
+
+试用满意后，按下方步骤在 Codex 中安装即可。
+
+
 ## Claude Code 版本
 
 本仓库是 Codex 打包版本。如需获取原始的 Claude Code 版 Academic Research Skills，请使用
